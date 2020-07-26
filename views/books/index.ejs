@@ -1,0 +1,14 @@
+<h2>Search Books</h2>
+<form action="/books" method="GET">
+    <div class="form-group">
+        <label for="title">Name</label>
+        <input value="<%= searchOptions.name %>" type="text" name="name" class="form-control mb-2">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<ul class="list-group mt-3 d-inline-block">
+    <% books.forEach(book => { %>
+        <li class="list-group-item d-inline-block border-top"><%= book.name %></li>
+    <%})%>
+</ul>

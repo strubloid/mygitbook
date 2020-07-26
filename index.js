@@ -2,13 +2,14 @@ if(process.env.NODE_ENV !== 'production'){
     require('dotenv'). config()
 }
 
-
 const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
+const bodyParser = require('body-parser')
 
-// loading the controller of the main page
+// loading routes
 const indexRouter = require('./routers/indexRouter')
+const booksRouter = require('./routers/booksRouter')
 
 // setting the view engine as ejs
 app.set('view engine', 'ejs')
@@ -23,6 +24,14 @@ app.use(expressLayouts)
 // where will be the public files
 app.use(express.static('public'))
 
+// setting objects to use
+app.use(bodyParser.urlencoded({
+    limit: '10mb',
+    extended : false
+}))
+
+// app.use(bodyParser.json());
+
 // loading the library for mongo-db + connection
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, {
@@ -33,8 +42,9 @@ const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', error => console.log('connected to mongoose database'))
 
-// using the indexRouter
+// setting to use the routers
 app.use('/', indexRouter)
+app.use('/books', booksRouter)
 
 // getting the port by the server or the current 80 (for localhost)
 app.listen(process.env.PORT || 80)
