@@ -4,7 +4,11 @@ const router = express.Router()
 // Loading the book model
 const Book = require('../models/bookModel')
 
-// This will handle everything that will be on books/[params]
+/**
+ * This will handle:
+ *  -> everything that will be on books/[params]
+ *  -> This will handle the search action
+ */
 router.get('/', async (req, res) => {
     let searchOptions = {}
 
@@ -19,19 +23,18 @@ router.get('/', async (req, res) => {
         })
     } catch (e) {
         console.log(e.message)
-        debugger
         res.redirect('/')
     }
 })
 
-// This will handle the books/new action
+// Handling books/new action
 router.get('/new', (req, res) => {
     res.render('books/new', {
         book : new Book()
     })
 })
 
-// This will create the new book
+// Creating a  new book
 router.post('/', async (req, res) => {
     const book = new Book({
         name : req.body.name

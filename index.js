@@ -5,7 +5,6 @@ if(process.env.NODE_ENV !== 'production'){
 const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
-const bodyParser = require('body-parser')
 
 // loading routes
 const indexRouter = require('./routers/indexRouter')
@@ -24,7 +23,8 @@ app.use(expressLayouts)
 // where will be the public files
 app.use(express.static('public'))
 
-// setting objects to use
+// setting objects to use with body-parser
+const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({
     limit: '10mb',
     extended : false
