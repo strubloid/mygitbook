@@ -1,0 +1,46 @@
+<h2>Search Chapters</h2>
+<form action="/chapters" method="GET">
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Title</span>
+        </div>
+        <input value="<%= searchOptions.title %>" type="text" name="title" class="form-control">
+    </div>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Update Date</span>
+        </div>
+        <input value="<%= searchOptions.updateDate %>" type="date" name="updateDate" class="form-control" >
+    </div>
+
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Content</span>
+        </div>
+        <input value="<%= searchOptions.updateDate %>" type="text" name="markdown" class="form-control" >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<h2 class="mt-5">All Chapters</h2>
+
+<ul class="list-group mt-3 d-inline-block">
+    <% chapters.forEach(chapter => { %>
+        <li class="list-group-item d-inline-block border-top mb-4 w-25">
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><%= chapter.title %></span>
+                </div>
+                <div class="container">
+                    <div class="row justify-contentcenter">
+                        <div class="col-md-12 px-0"><%= chapter.updateDate %></div>
+                        <div class="col-md-12 px-0"><%= chapter.markdown %></div>
+                    </div>
+                </div>
+            </div>
+
+        </li>
+    <%})%>
+</ul>
