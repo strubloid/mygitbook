@@ -1,6 +1,6 @@
-let BaseRouter = require('./BaseRouter');
-let BookController = require('../controllers/BookController')
-let IndexController = require('../controllers/IndexController')
+const BaseRouter = require('./BaseRouter');
+const BookController = require('../controllers/BookController');
+const IndexController = require('../controllers/IndexController');
 
 class IndexRouter extends BaseRouter {
 
@@ -20,14 +20,19 @@ class IndexRouter extends BaseRouter {
 
     loadRoutes() {
         this.indexRoute();
+        this.loadBooks();
     }
-
+    async loadBooks()
+    {
+        this.router.get('/load-books', async (req, res) => {
+            await this.indexController.updateRepository();
+            res.redirect('/');
+        })
+    }
     async indexRoute() {
         this.router.get('/', async(req,res)=>{
 
             try {
-
-                // await this.indexController.updateRepository();
 
                 let books = await this.bookController.loadAllBooks();
 

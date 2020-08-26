@@ -1,6 +1,7 @@
-let BaseRouter = require('./BaseRouter');
+const BaseRouter = require('./BaseRouter');
 const BookModel = require('../models/BookModel');
 const ChapterModel = require('../models/ChapterModel');
+const BookController = require('../controllers/BookController');
 
 class BookRouter extends BaseRouter {
 
@@ -14,10 +15,30 @@ class BookRouter extends BaseRouter {
 
     loadModules() {
         super.loadModules();
+        this.bookController = new BookController();
     }
 
     loadRoutes() {
+        this.loadBookListRoute();
         this.loadBookRoute();
+    }
+
+    async loadBookListRoute() {
+        this.router.get('/list', async(req,res)=>{
+            try {
+
+                let books = await this.bookController.loadAllBooks();
+
+                // rendering the index page as book list
+                res.render('book/list', {
+                    books : books,
+                });
+
+            } catch (e){
+                console.log(e)
+            }
+
+        })
     }
 
     async loadBookRoute() {
@@ -39,7 +60,7 @@ class BookRouter extends BaseRouter {
                 });
 
                 // rendering the index page as book list
-                res.render('book/list', {
+                res.render('book/view', {
                     book : book,
                     chapters : chapters,
                 });
