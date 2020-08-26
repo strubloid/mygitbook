@@ -14,27 +14,14 @@
                         Books
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/books">List</a>
+                        <a class="dropdown-item" href="/book/list">List</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/books/new">+ add</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Chapters
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/chapters">List</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/chapters/new">+ add</a>
+                        <% allbooks.forEach(book => { %>
+                            <a class="dropdown-item" href="<%= book.getBookReference() %>"><%= book.name %></a>
+                        <% }) %>
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 </header>
