@@ -8,8 +8,8 @@ const expressLayouts = require('express-ejs-layouts')
 
 // loading routes
 const indexRouter = require('./routers/indexRouter')
-const booksRouter = require('./routers/booksRouter')
-const chaptersRouter = require('./routers/chaptersRouter')
+// const booksRouter = require('./routers/booksRouter')
+// const chaptersRouter = require('./routers/chaptersRouter')
 
 // setting the view engine as ejs
 app.set('view engine', 'ejs')
@@ -45,8 +45,8 @@ db.once('open', error => console.log('connected to mongoose database'))
 
 // setting to use the routers
 app.use('/', indexRouter)
-app.use('/books', booksRouter)
-app.use('/chapters', chaptersRouter)
+// app.use('/books', booksRouter)
+// app.use('/chapters', booksRouter)
 
 // getting the port by the server or the current 80 (for localhost)
 app.listen(process.env.PORT || 80)

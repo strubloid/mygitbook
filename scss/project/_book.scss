@@ -1,0 +1,14 @@
+body {
+  div.container {
+    #book-list {
+      li[id^='book'] {
+        @include basicBook();
+      }
+
+      li {
+        a {
+        }
+      }
+    }
+  }
+}

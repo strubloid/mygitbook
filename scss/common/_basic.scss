@@ -1,0 +1,26 @@
+body {
+
+  background-color: $backgroundColor;
+
+  .list-group-item {
+    background: transparent;
+  }
+
+
+
+  header {
+
+  }
+
+  .container {
+
+  }
+
+  footer {
+    color: white;
+    position: fixed;
+    top: 98%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

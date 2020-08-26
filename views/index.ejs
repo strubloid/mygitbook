@@ -1,1 +1,11 @@
-View
+<ul id="book-list" class="list-group mt-3 d-inline-block">
+    <% books.forEach(book => { %>
+        <li id="book-<%= book.name %>" class="list-group-item d-inline-block box-border">
+            <a href="<%= book.getBookReference() %>" class="btn blue">
+                <span>
+                    <%= book.name %>
+                </span>
+            </a>
+        </li>
+    <% }) %>
+</ul>

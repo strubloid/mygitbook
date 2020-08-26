@@ -1,0 +1,76 @@
+body {
+  background-color: #FFFFF; }
+  body .list-group-item {
+    background: transparent; }
+  body footer {
+    color: white;
+    position: fixed;
+    top: 98%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+body div.container #book-list li[id^='book'] a {
+  color: inherit;
+  text-decoration: none; }
+  body div.container #book-list li[id^='book'] a.blue span {
+    background: -webkit-linear-gradient(left, #3dade9, #bf2fcb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  body div.container #book-list li[id^='book'] a.green span {
+    background: -webkit-linear-gradient(left, #add356, #00dfa6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
+body div.container #book-list li[id^='book'].box-border {
+  border: 0px; }
+  body div.container #book-list li[id^='book'].box-border .btn {
+    display: inline-block;
+    margin: 0;
+    padding: 3em 3em;
+    background: transparent;
+    border-radius: 10px;
+    font-weight: 400;
+    text-align: center;
+    align-self: center; }
+    body div.container #book-list li[id^='book'].box-border .btn.blue {
+      align-self: stretch; }
+  body div.container #book-list li[id^='book'].box-border .green {
+    border-left: 2px solid #add356;
+    border-right: 2px solid #00dfa6;
+    background-image: -webkit-linear-gradient(left, #add356, #00dfa6), -webkit-linear-gradient(left, #add356, #00dfa6);
+    background-size: 100% 2px;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-clip: border-box; }
+  body div.container #book-list li[id^='book'].box-border .blue {
+    border-left: 2px solid #3dade9;
+    border-right: 2px solid #bf2fcb;
+    background-image: -webkit-linear-gradient(left, #3dade9, #bf2fcb), -webkit-linear-gradient(left, #3dade9, #bf2fcb);
+    background-size: 100% 2px;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-clip: border-box; }
+
+body .container #chapter-list {
+  width: 100%; }
+  body .container #chapter-list.box-border li.green {
+    border-left: 2px solid #add356;
+    border-right: 2px solid #00dfa6;
+    background-image: -webkit-linear-gradient(left, #add356, #00dfa6), -webkit-linear-gradient(left, #add356, #00dfa6);
+    background-size: 100% 2px;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-clip: border-box; }
+  body .container #chapter-list.box-border li.blue {
+    border-left: 2px solid #3dade9;
+    border-right: 2px solid #bf2fcb;
+    background-image: -webkit-linear-gradient(left, #3dade9, #bf2fcb), -webkit-linear-gradient(left, #3dade9, #bf2fcb);
+    background-size: 100% 2px;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-clip: border-box; }
+  body .container #chapter-list li[id^='chapter'] {
+    width: 100%; }
+    body .container #chapter-list li[id^='chapter'] span {
+      width: 100%;
+      display: inline-block; }

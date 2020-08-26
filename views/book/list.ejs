@@ -1,0 +1,9 @@
+<div class="container"><%= book.name %></div>
+<ul id="chapter-list" class="list-group mt-3 d-inline-block box-border">
+    <% chapters.forEach(chapter => { %>
+        <li id="chapter-<%= chapter.name %>" class="list-group-item mb-4 d-inline-block blue">
+            <span><%= chapter.getName() %></span>
+            <span><%- chapter.getMarkdown() %></span>
+        </li>
+    <% }) %>
+</ul>
