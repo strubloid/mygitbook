@@ -2,13 +2,14 @@
 This project its a sample for showing how is possible to create an API with NodeJs & Github.
 Basically Its a project that contains:
 
-| Type             | Value            |
-|:-----------------|:-----------------|
-| Application      | NodeJs           |
-| Server           | Express          |
-| Frontend         | EJS (Typescript) |
-| Database         | MongoDb          |
-| Live Environment | Heroku           |
+| Type                                    | Value            |
+|:----------------------------------------|:-----------------|
+| Application                             | NodeJs           |
+| Server                                  | Express          |
+| Frontend                                | EJS (Typescript) |
+| Database                                | MongoDb          |
+| Live Environment                        | Heroku           |
+| Source for this project book structrure | https://github.com/strubloid/testbook                 |
 
 ## How this works?
 * Markdown repository: https://github.com/strubloid/testbook
