@@ -5,8 +5,6 @@ class GithubModel {
         this.githubClientId = process.env.GITHUB_CLIENT_ID;
         this.githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
         this.fetch = require("node-fetch");
-
-        // this.repositoryUrl = 'https://api.github.com/repos/strubloid/resume';
         this.repositoryUrl = 'https://api.github.com/repos/strubloid/testbook/contents';
     }
 
