@@ -4,10 +4,6 @@ class GithubModel {
 
         this.githubClientId = process.env.GITHUB_CLIENT_ID;
         this.githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
-
-        // console.log(this.githubClientId);
-        // console.log(this.githubClientSecret);
-
         this.fetch = require("node-fetch");
 
         // this.repositoryUrl = 'https://api.github.com/repos/strubloid/resume';
@@ -38,16 +34,33 @@ class GithubModel {
         return await this.githubFetch(fetchString);
     }
 
+    /**
+     * This will fetch information about a book.
+     * @param bookFetchString
+     * @returns {Promise<any>}
+     */
     async getBook(bookFetchString)
     {
         return this.githubFetch(bookFetchString)
     }
 
+    /**
+     * This will fetch what is a chapter in the github structure.
+     *
+     * @param bookFetchString
+     * @returns {Promise<any>}
+     */
     async getChapter(bookFetchString)
     {
         return this.githubFetch(bookFetchString)
     }
 
+    /**
+     * Loading the chapter information.
+     *
+     * @param chapterFetchString
+     * @returns {Promise<*>}
+     */
     async fetchChapterContent(chapterFetchString)
     {
         const response = await this.fetch(this.buildFetchCall(chapterFetchString));
@@ -55,6 +68,12 @@ class GithubModel {
         return markdown;
     }
 
+    /**
+     * Github fetch command.
+     *
+     * @param stringToFetch
+     * @returns {Promise<any>}
+     */
     async githubFetch(stringToFetch) {
         const response = await this.fetch(this.buildFetchCall(stringToFetch));
         const json = await response.json();
@@ -62,6 +81,5 @@ class GithubModel {
     }
 
 }
-// const Book = new Book();
 
 module.exports = GithubModel;

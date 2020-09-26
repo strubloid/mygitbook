@@ -38,9 +38,6 @@ class IndexController {
                     });
                     const newBook = await databaseBook.save();
                     bookId = newBook.id;
-                } else {
-                    // TODO: implement the update method
-                    bookId = databaseBook.id;
                 }
 
                 // fetch book chapters on github
@@ -65,21 +62,14 @@ class IndexController {
                                 book : bookId
                             });
                             await databaseChapter.save();
-                        } else {
-
-                            // TODO: implement the update method
-                            a =1;
                         }
                     }
                 }
-
-
             } catch (e){
                 console.log(e)
             }
         }
     }
-
 }
 
 module.exports = IndexController;

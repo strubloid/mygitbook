@@ -35,7 +35,6 @@ class BaseRouter {
             try {
 
                 // await this.indexController.updateRepository();
-
                 let locals = {};
 
                 let bookController = new BookController();

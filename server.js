@@ -38,9 +38,6 @@ class Server {
         this.app.set('views', __dirname + '/views'); // set the views folder
         this.app.set('layout', 'layouts/layout');    // set the layout folder + set to use it
         this.app.use(this.expressLayouts);
-
-        // this.app.use(this.methodOverride('_method'));
-
         this.app.use(this.express.static('public')); // where will be the public files
 
         // setting objects to use with body-parser
