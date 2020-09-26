@@ -7,16 +7,14 @@ Basically Its a project that contains:
 | Application      | NodeJs           |
 | Server           | Express          |
 | Frontend         | EJS (Typescript) |
+| Database         | MongoDb          |
 | Live Environment | Heroku           |
 
 ## How this works?
-* All routers must implement the interface BaseRouter
-* So we have a rule to load the data for each page, but in the index page will load all books on IndexRouter.js
-* We have IndexController being the first point into this project, it will import
-
-> This is a test project that is mainly a way to show
-my books that i will be building by adding new markdown files
-under a book project
+* Markdown repository: https://github.com/strubloid/testbook
+* Each folder it's like a book, and each files inside of it they are considered chapters, and the content of each file its the chapter content.
+* At the first time its loaded the information provided from github API, and set this into an object that will contain further information for the chapter's
+* When a book is selected, all chaptars will be fetched by the github book fetch, and will be loaded all content from the book
 
 
 ## Project Structure
