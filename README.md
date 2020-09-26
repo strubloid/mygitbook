@@ -17,18 +17,6 @@ Basically Its a project that contains:
 * At the first time its loaded the information provided from github API, and set this into an object that will contain further information for the chapter's
 * When a book is selected, all chaptars will be fetched by the github book fetch, and will be loaded all content from the book
 
-
-## Project Structure
-* Chapter: This will be object that will contain a chapter text
-* Book: This will be the book that will be attached Chapters
-
-### Chapter
-* Number
-* Title
-* Content
-
-### Book
-* Id
-* Name
-* Chapter
+-----
+For more informaiton about this code, you can enter in contact with me on mail at strubloid.com
  
