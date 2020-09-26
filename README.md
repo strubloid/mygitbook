@@ -1,5 +1,5 @@
 # MyGitbook
-This project its a sample for showing how is possible to create an API with NodeJs & Github.
+This project is a sample for showing how is possible to create an API with NodeJs & Github.
 Basically Its a project that contains:
 
 | Type                                    | Value            |
